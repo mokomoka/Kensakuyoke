@@ -7,17 +7,33 @@
   </head>
   <body>
     <h1>Kensakuyoke</h1>
-    <form onsubmit="return onSubmit()">
-      <label for="text_orig">検索避けしたい単語・文</label>
-      <input type="text" id="text_orig" value="" />
+    <form id="kensakuyoke" onsubmit="return onSubmit()">
+      <label
+        >検索避けしたい単語・文<input type="text" id="text_orig" value=""
+      /></label>
       <input type="button" onclick="onSubmit()" value="変換" />
+      <label><input type="radio" name="method" value="/" />/</label>
+      <label><input type="radio" name="method" value="." />.</label>
+      <label><input type="radio" name="method" value="*" />*</label>
+      <label><input type="radio" name="method" value="_" />_</label>
+      <label><input type="radio" name="method" value="i" />i</label>
     </form>
     <input type="text" id="text_converted" value="" />
     <script language="javascript" type="text/javascript">
       function onSubmit() {
-        var orig = document.getElementById("text_orig").value;
-        document.getElementById("text_converted").value =
-          orig + "が入力されました。";
+        var form = document.getElementById("kensakuyoke");
+        var text_orig = form.text_orig.value;
+        var text_orig_arr = String(text_orig).split("");
+        var text_con = "";
+        var method = form.method.value;
+        for (var i = 0; i < text_orig_arr.length; i++) {
+          if (i < text_orig_arr.length - 1) {
+            text_con += text_orig_arr[i] + method;
+          } else {
+            text_con += text_orig_arr[i];
+          }
+        }
+        document.getElementById("text_converted").value = text_con;
         return false;
       }
     </script>
