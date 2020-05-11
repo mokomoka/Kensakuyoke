@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Kensakuyoke</title>
+  </head>
+  <body>
+    <h1>Kensakuyoke</h1>
+    <form onsubmit="return onSubmit()">
+      <label for="text_orig">検索避けしたい単語・文</label>
+      <input type="text" id="text_orig" value="" />
+      <input type="button" onclick="onSubmit()" value="変換" />
+    </form>
+    <input type="text" id="text_converted" value="" />
+    <script language="javascript" type="text/javascript">
+      function onSubmit() {
+        var orig = document.getElementById("text_orig").value;
+        document.getElementById("text_converted").value =
+          orig + "が入力されました。";
+        return false;
+      }
+    </script>
+  </body>
+</html>
