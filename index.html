@@ -94,11 +94,12 @@
       function changeDisabled() {
         var methods = document.getElementById("kensakuyoke").method;
         if (methods[methods.length - 1].checked) {
-          document.getElementById("kensakuyoke").othersText.disabled = false;
+          document.getElementById("kensakuyoke").text_other.disabled = false;
         } else {
-          document.getElementById("kensakuyoke").othersText.disabled = true;
+          document.getElementById("kensakuyoke").text_other.disabled = true;
         }
       }
+      window.onload = changeDisabled();
     </script>
   </body>
 </html>
