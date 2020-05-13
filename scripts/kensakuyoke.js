@@ -44,6 +44,7 @@ function onSubmit() {
   document.getElementById("text_converted").value = text_con;
   return false;
 }
+
 function changeDisabled() {
   var form = document.getElementById("kensakuyoke");
   if (document.getElementById("others_input").checked) {
@@ -58,3 +59,10 @@ function changeDisabled() {
   }
 }
 window.onload = changeDisabled();
+
+function copyText() {
+  var text = document.getElementById("text_converted");
+  text.select();
+  text.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+}
