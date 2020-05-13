@@ -4,8 +4,8 @@ function onSubmit() {
   var text_orig_arr = String(text_orig).split("");
   var text_con = "";
   var method = form.method.value;
-  if (method === "others_between") {
-    method = form.text_other_between.value;
+  if (method === "others_input") {
+    method = form.text_other_input.value;
   } else if (method === "others_replace") {
     method = form.text_other_replace.value;
   }
@@ -21,14 +21,14 @@ function onSubmit() {
 }
 function changeDisabled() {
   var form = document.getElementById("kensakuyoke");
-  if (document.getElementById("others_between").checked) {
-    form.text_other_between.disabled = false;
+  if (document.getElementById("others_input").checked) {
+    form.text_other_input.disabled = false;
     form.text_other_replace.disabled = true;
   } else if (document.getElementById("others_replace").checked) {
     form.text_other_replace.disabled = false;
-    form.text_other_between.disabled = true;
+    form.text_other_input.disabled = true;
   } else {
-    form.text_other_between.disabled = true;
+    form.text_other_input.disabled = true;
     form.text_other_replace.disabled = true;
   }
 }
