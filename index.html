@@ -19,7 +19,7 @@
           ><input
             type="radio"
             name="method"
-            value="/"
+            value="input_/"
             onclick="changeDisabled()"
           />
           /</label
@@ -28,7 +28,7 @@
           ><input
             type="radio"
             name="method"
-            value="."
+            value="input_."
             onclick="changeDisabled()"
           />.</label
         >
@@ -36,7 +36,7 @@
           ><input
             type="radio"
             name="method"
-            value="*"
+            value="input_*"
             onclick="changeDisabled()"
           />*</label
         >
@@ -44,7 +44,7 @@
           ><input
             type="radio"
             name="method"
-            value="_"
+            value="input__"
             onclick="changeDisabled()"
           />_</label
         >
@@ -52,7 +52,7 @@
           ><input
             type="radio"
             name="method"
-            value="i"
+            value="input_i"
             onclick="changeDisabled()"
           />i</label
         >
@@ -60,7 +60,7 @@
           ><input
             type="radio"
             name="method"
-            value=" "
+            value="input_ "
             onclick="changeDisabled()"
           />半角スペース</label
         >
@@ -68,7 +68,7 @@
           ><input
             type="radio"
             name="method"
-            value="others_input"
+            value="input_others"
             onclick="changeDisabled()"
             id="others_input"
           />その他</label
@@ -81,7 +81,7 @@
           ><input
             type="radio"
             name="method"
-            value="○"
+            value="replace_○"
             onclick="changeDisabled()"
           />○</label
         >
@@ -89,7 +89,7 @@
           ><input
             type="radio"
             name="method"
-            value="●"
+            value="replace_●"
             onclick="changeDisabled()"
           />●</label
         >
@@ -97,7 +97,7 @@
           ><input
             type="radio"
             name="method"
-            value="☓"
+            value="replace_☓"
             onclick="changeDisabled()"
           />☓</label
         >
@@ -105,7 +105,7 @@
           ><input
             type="radio"
             name="method"
-            value="others_replace"
+            value="replace_others"
             onclick="changeDisabled()"
             id="others_replace"
           />その他</label
@@ -121,7 +121,15 @@
           step="1"
       /></label>
     </form>
-    <input type="text" id="text_converted" size="40" value="" />
+    <div>
+      <label
+        >変換結果<br /><input
+          type="text"
+          id="text_converted"
+          size="40"
+          value=""
+      /></label>
+    </div>
     <script type="text/javascript" src="scripts/mikan.js"></script>
     <script type="text/javascript" src="scripts/kensakuyoke.js"></script>
   </body>

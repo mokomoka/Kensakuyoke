@@ -3,19 +3,44 @@ function onSubmit() {
   var text_orig = form.text_orig.value;
   var text_orig_arr = String(text_orig).split("");
   var text_con = "";
-  var method = form.method.value;
-  if (method === "others_input") {
-    method = form.text_other_input.value;
-  } else if (method === "others_replace") {
-    method = form.text_other_replace.value;
-  }
-  for (var i = 0; i < text_orig_arr.length; i++) {
-    if (i < text_orig_arr.length - 1) {
-      text_con += text_orig_arr[i] + method;
+  var method_value = form.method.value;
+  var con_type;
+
+  if (!method_value.indexOf("input")) {
+    con_type = "input";
+    if (method_value === "input_others") {
+      method_value = form.text_other_input.value;
     } else {
-      text_con += text_orig_arr[i];
+      method_value = method_value.slice(-1);
+    }
+  } else if (!method_value.indexOf("replace")) {
+    con_type = "replace";
+    if (method_value === "replace_others") {
+      method_value = form.text_other_replace.value;
+    } else {
+      method_value = method_value.slice(-1);
     }
   }
+
+  // 検索避け文に変換
+  if (con_type === "input") {
+    for (var i = 0; i < text_orig_arr.length; i++) {
+      if (i < text_orig_arr.length - 1) {
+        text_con += text_orig_arr[i] + method_value;
+      } else {
+        text_con += text_orig_arr[i];
+      }
+    }
+  } else if (con_type === "replace") {
+    for (var i = 0; i < text_orig_arr.length; i++) {
+      if (i % 2 == 0) {
+        text_con += text_orig_arr[i];
+      } else {
+        text_con += method_value;
+      }
+    }
+  }
+
   document.getElementById("text_converted").value = text_con;
   return false;
 }
