@@ -6,17 +6,17 @@ function onSubmit() {
   var method_value = form.method.value;
   var con_type;
 
-  if (!method_value.indexOf("input")) {
-    con_type = "input";
-    if (method_value === "input_others") {
-      method_value = form.text_other_input.value;
-    } else {
-      method_value = method_value.slice(-1);
-    }
-  } else if (!method_value.indexOf("replace")) {
+  if (!method_value.indexOf("replace")) {
     con_type = "replace";
     if (method_value === "replace_others") {
       method_value = form.text_other_replace.value;
+    } else {
+      method_value = method_value.slice(-1);
+    }
+  } else {
+    con_type = "input";
+    if (method_value === "input_others") {
+      method_value = form.text_other_input.value;
     } else {
       method_value = method_value.slice(-1);
     }

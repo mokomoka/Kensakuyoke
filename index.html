@@ -7,12 +7,16 @@
   </head>
   <body>
     <h1>Kensakuyoke</h1>
+    <ol>
+      <li>検索避けしたい文章を入力</li>
+      <li>挿入・置き換えする文字を選択</li>
+      <li>変換をクリック</li>
+    </ol>
     <form id="kensakuyoke" onsubmit="return onSubmit()">
       <label
         >検索避けしたい単語・文<br />
         <input type="text" id="text_orig" size="40" value="" />
       </label>
-      <button type="submit" onclick="onSubmit()">変換</button>
       <div>
         <p>間に記号や文字を挿入する</p>
         <label
@@ -120,6 +124,7 @@
           max="5"
           step="1"
       /></label>
+      <button type="submit" onclick="onSubmit()">変換</button>
     </form>
     <div>
       <label
