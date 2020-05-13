@@ -4,8 +4,10 @@ function onSubmit() {
   var text_orig_arr = String(text_orig).split("");
   var text_con = "";
   var method = form.method.value;
-  if (method === "others") {
-    method = form.text_other.value;
+  if (method === "others_between") {
+    method = form.text_other_between.value;
+  } else if (method === "others_replace") {
+    method = form.text_other_replace.value;
   }
   for (var i = 0; i < text_orig_arr.length; i++) {
     if (i < text_orig_arr.length - 1) {
@@ -18,11 +20,16 @@ function onSubmit() {
   return false;
 }
 function changeDisabled() {
-  var methods = document.getElementById("kensakuyoke").method;
-  if (methods[methods.length - 1].checked) {
-    document.getElementById("kensakuyoke").text_other.disabled = false;
+  var form = document.getElementById("kensakuyoke");
+  if (document.getElementById("others_between").checked) {
+    form.text_other_between.disabled = false;
+    form.text_other_replace.disabled = true;
+  } else if (document.getElementById("others_replace").checked) {
+    form.text_other_replace.disabled = false;
+    form.text_other_between.disabled = true;
   } else {
-    document.getElementById("kensakuyoke").text_other.disabled = true;
+    form.text_other_between.disabled = true;
+    form.text_other_replace.disabled = true;
   }
 }
 window.onload = changeDisabled();

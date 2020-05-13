@@ -9,68 +9,119 @@
     <h1>Kensakuyoke</h1>
     <form id="kensakuyoke" onsubmit="return onSubmit()">
       <label
-        >検索避けしたい単語・文<input type="text" id="text_orig" value=""
+        >検索避けしたい単語・文<br />
+        <input type="text" id="text_orig" size="40" value="" />
+      </label>
+      <button type="submit" onclick="onSubmit()">変換</button>
+      <div>
+        <p>間に記号や文字を挿入する</p>
+        <label
+          ><input
+            type="radio"
+            name="method"
+            value="/"
+            onclick="changeDisabled()"
+          />
+          /</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="method"
+            value="."
+            onclick="changeDisabled()"
+          />.</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="method"
+            value="*"
+            onclick="changeDisabled()"
+          />*</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="method"
+            value="_"
+            onclick="changeDisabled()"
+          />_</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="method"
+            value="i"
+            onclick="changeDisabled()"
+          />i</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="method"
+            value=" "
+            onclick="changeDisabled()"
+          />半角スペース</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="method"
+            value="others_between"
+            onclick="changeDisabled()"
+            id="others_between"
+          />その他</label
+        >
+        <input type="text" id="text_other_between" value="" />
+      </div>
+      <div>
+        <p>一部を記号や文字で置き換える</p>
+        <label
+          ><input
+            type="radio"
+            name="method"
+            value="○"
+            onclick="changeDisabled()"
+          />○</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="method"
+            value="●"
+            onclick="changeDisabled()"
+          />●</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="method"
+            value="☓"
+            onclick="changeDisabled()"
+          />☓</label
+        >
+        <label
+          ><input
+            type="radio"
+            name="method"
+            value="others_replace"
+            onclick="changeDisabled()"
+            id="others_replace"
+          />その他</label
+        >
+        <input type="text" id="text_other_replace" value="" />
+      </div>
+      <label
+        >検索避けレベル<input
+          type="range"
+          name="level"
+          min="1"
+          max="5"
+          step="1"
       /></label>
-      <input type="button" onclick="onSubmit()" value="変換" />
-      <label
-        ><input
-          type="radio"
-          name="method"
-          value="/"
-          onclick="changeDisabled()"
-        />/</label
-      >
-      <label
-        ><input
-          type="radio"
-          name="method"
-          value="."
-          onclick="changeDisabled()"
-        />.</label
-      >
-      <label
-        ><input
-          type="radio"
-          name="method"
-          value="*"
-          onclick="changeDisabled()"
-        />*</label
-      >
-      <label
-        ><input
-          type="radio"
-          name="method"
-          value="_"
-          onclick="changeDisabled()"
-        />_</label
-      >
-      <label
-        ><input
-          type="radio"
-          name="method"
-          value="i"
-          onclick="changeDisabled()"
-        />i</label
-      >
-      <label
-        ><input
-          type="radio"
-          name="method"
-          value=" "
-          onclick="changeDisabled()"
-        />半角スペース</label
-      >
-      <label
-        ><input
-          type="radio"
-          name="method"
-          value="others"
-          onclick="changeDisabled()"
-        />その他</label
-      >
-      <input type="text" id="text_other" value="" />
     </form>
-    <input type="text" id="text_converted" value="" />
+    <input type="text" id="text_converted" size="40" value="" />
     <script type="text/javascript" src="scripts/mikan.js"></script>
     <script type="text/javascript" src="scripts/kensakuyoke.js"></script>
   </body>
